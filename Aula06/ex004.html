@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+<body>
+    <script>var nome = window.prompt("Qual é o teu nome ?")
+    document.write(`Teu nome tem ${nome.length} letras <br/>`)
+    document.write(`A segunda letra do teu nome é ${nome[0]} <br/>`)
+    document.write(`O teu nome em maiúsculo é ${nome.toUpperCase()} <br/>`)
+    document.write(`Teu nome em minusculo é ${nome.toLowerCase()} <br/>`)
+    
+    let n1 = Number(window.prompt("Digite um numero: "))
+    window.alert(`O numero convertido para moeda brasileira é ${n1.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}`)
+
+
+
+
+    </script>
+</body>
+</html>
