@@ -18,6 +18,9 @@
         text-align: center;
         
     }
+    res{
+        margin-top: 20px;
+    }
 
 
     </style>
@@ -35,16 +38,19 @@
     
     </div>
     <script>
+
+    
+
     function verificarNacionalidade(){
     var nome = document.getElementById("nome")
     var nacionalidade = document.getElementById("nacionalidade")
     var resultado = document.getElementById("resultado")
-
+    let pais = nacionalidade.value.toLowerCase().trim()
     
-        if(nacionalidade.value == "Brasil") {
-        resultado.innerHTML += nome.value + "!" + " Você é Brasileiro! <strong> Siga para esquerda </strong>"     
+        if(pais == "brasil" || pais == "brazil") {
+        resultado.innerHTML += nome.value + "!" + " Você é Brasileiro! <strong> Siga para esquerda </strong></br>"     
         } else{
-        resultado.innerHTML += nome.value + "!" + "Você é estrangeiro! <strong> Siga pela direita </strong>"    
+        resultado.innerHTML += nome.value + "!" + "Você é estrangeiro! <strong> Siga pela direita </strong></br>"    
         }
     }
     </script>
