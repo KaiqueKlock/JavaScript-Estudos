@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de cartório Brasileiro </title>
+    <style>
+    body{
+        text-align: center;
+        background-color: rgba(36, 144, 206, 0.904);
+        color: rgb(243, 243, 238);
+    }
+    h2{
+        text-align: center;
+        color: rgb(215, 238, 13);
+    }
+    h4{
+        text-align: center;
+        
+    }
+
+
+    </style>
+</head>
+<body>
+    <h1>Sistema de Cartório Brasileiro</h1>
+    <h2>Indicamos que <strong>sempre</strong> ande com teus documentos</h2>
+
+    Qual seu nome? <input type="text" id="nome">
+    País de origem? <input type="text" id="nacionalidade">
+    <input type="button" value="Verificar" onclick="verificarNacionalidade()">
+    
+    <div id="resultado">
+    
+    
+    </div>
+    <script>
+    function verificarNacionalidade(){
+    var nome = document.getElementById("nome")
+    var nacionalidade = document.getElementById("nacionalidade")
+    var resultado = document.getElementById("resultado")
+
+    
+        if(nacionalidade.value == "Brasil") {
+        resultado.innerHTML += nome.value + "!" + " Você é Brasileiro! <strong> Siga para esquerda </strong>"     
+        } else{
+        resultado.innerHTML += nome.value + "!" + "Você é estrangeiro! <strong> Siga pela direita </strong>"    
+        }
+    }
+    </script>
+</body>
+</html>
