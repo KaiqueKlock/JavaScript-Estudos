@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+</head>
+<style>
+    body{
+        font: normal 18pt Arial;
+        background-color: rgb(241, 196, 128);
+    }
+    input{
+        font: normal 18pt Arial;
+        width: 300px;
+    }
+    div{
+        margin-top: 10px;
+        background-color: rgb(243, 206, 150);;
+    }
+</style>
+<body>
+    <h1>Calculadora de IMC</h1>
+    <input type="number" name="peso" id="peso" placeholder="Digite seu peso (kg)">  
+    <input type="number" name="altura" id="altura" placeholder="Digite sua altura (m)">
+    <input type="button" value="CalcularIMC" id="calcular" onclick="calcularIMC()">
+    <div id = "resultadoIMC">
+        Resultado do IMC 
+    </div>
+    <script>
+        function calcularIMC(){
+            let peso = document.getElementById("peso")
+            let altura = document.getElementById("altura")
+            let imc = peso.value / (altura.value * altura.value)
+            let res = window.document.getElementById("resultadoIMC")
+
+            if (imc < 18.5){
+                res.innerHTML = "Seu IMC é " + imc.toFixed(2) + " e você está abaixo do <strong>peso ideal</strong>"
+            } else if (imc >= 18.5 && imc < 25){
+                res.innerHTML = "Seu IMC é " + imc.toFixed(2) + " e você está no <strong>peso ideal</strong>"
+            } else if (imc >= 25 && imc < 30){
+                res.innerHTML = "Seu IMC é " + imc.toFixed(2) + " e você está com <strong>sobrepeso</strong>"
+            } else if (imc >= 30 && imc <35){
+                res.innerHTML = 
+                res.innerHTML = "Seu imc é " + imc.toFixed(2) + " e você está com <strong>obesidade grau I</strong>"
+            } else if (imc >= 35 && imc < 40){
+                res.innerHTML = "Seu imc é " + imc.toFixed(2) + " e você está com <strong>obesidade grau II</strong>"
+            } else {
+               res.innerHTML = "Seu imc é " + imc.toFixed(2) + " e você está com <strong>obesidade grau III</strong>"
+            }
+        }
+
+    </script>
+</body>
+</html>

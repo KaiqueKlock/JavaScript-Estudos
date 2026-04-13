@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        div#intera{
+
+            width: 200px;
+            height: 200px;
+            background-color: rgb(196, 34, 34);
+            font-size: 16px;
+            text-align: center;
+            line-height: 200px;
+            color: white;
+            border-color: antiquewhite;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="intera">
+        Interagindo...
+    </div>
+    <script>
+        var intera = document.getElementById("intera")
+        intera.addEventListener("click", function clicar(){
+            intera.innerText = "Clicou!"
+            intera.style.background = "rgb(110, 70, 94)";
+        })
+        intera.addEventListener("mouseenter", function passarMouse(){
+            intera.innerText = "Passou o mouse!"
+        })
+        intera.addEventListener("mouseout", function tirarMouse(){
+            intera.innerText = "Mouse Saiu"
+            intera.style.background = "rgb(146, 34, 34)";
+        })
+    </script>
+</body>
+</html>
