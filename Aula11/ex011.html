@@ -3,51 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de cartório Brasileiro </title>
+    <title>Sistema de Cartório Brasileiro </title>
     <style>
-    body{
-        text-align: center;
-        background-color: rgba(36, 144, 206, 0.904);
-        color: rgb(243, 243, 238);
-    }
-    h2{
-        text-align: center;
-        color: rgb(215, 238, 13);
-    }
-    h4{
-        text-align: center;
-        
-    }
-    res{
-        margin-top: 20px;
-    }
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(10, 52, 131, 0.753);
+    color: aliceblue;
+}
+p{
+    margin: 0ch;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+input {
+    padding: 10px;
+    font: bold;
+    border-radius: 20px;
+    
 
-
+}
+h1{
+margin-bottom: 10px;
+color: rgb(193, 243, 13);
+font-family: 'Courier New', Courier, monospace;
+}
+input#verificarBtn {
+    padding: 15px;
+    border-radius: 20px;   
+    cursor: pointer;
+    background-color: rgba(73, 126, 224, 0.815);  
+    color: aliceblue;
+    font-size: medium;
+    font-weight: bold;
+}
+h2{
+    margin: 0ch;
+    color: rgb(255, 208, 0);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-style: oblique;
+}
+div {
+    color: rgb(255, 208, 0);
+}
     </style>
 </head>
 <body>
     <h1>Sistema de Cartório Brasileiro</h1>
     <h2>Indicamos que <strong>sempre</strong> ande com teus documentos</h2>
 
-    Qual seu nome? <input type="text" id="nome">
-    País de origem? <input type="text" id="nacionalidade">
-    <input type="button" value="Verificar" onclick="verificarNacionalidade()">
-    
+    <p>Qual seu nome?</p><input type="text" id="nome">
+    </br>
+    <p>País de origem?</p><input type="text" id="nacionalidade">
+    </br>
+    <input type="button" value="Verificar" id="verificarBtn" onclick="verificarNacionalidade()">
+    </br>
     <div id="resultado">
     
     
     </div>
     <script>
-
+    
     
 
     function verificarNacionalidade(){
     var nome = document.getElementById("nome")
     var nacionalidade = document.getElementById("nacionalidade")
     var resultado = document.getElementById("resultado")
-    let pais = nacionalidade.value.toLowerCase().trim()
-    
-        if(pais == "brasil" || pais == "brazil") {
+    let pais = nacionalidade.value.toLowerCase().trim().replace(/[^\w\s]/gi, '')
+        
+        if(nome.value === "" || pais === ""){
+        resultado.innerHTML += "Digite um <strong>Nome</strong> e um <strong>Pais</strong></br>"
+        }else if (pais == "brasil" || pais == "brazil") {
         resultado.innerHTML += nome.value + "!" + " Você é Brasileiro! <strong> Siga para esquerda </strong></br>"     
         } else{
         resultado.innerHTML += nome.value + "!" + "Você é estrangeiro! <strong> Siga pela direita </strong></br>"    
