@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klock Page</title>
+
+<h1>Hello World!</h1>
+<p class = "description">How are you? </p>
+<p id = "msg">What are you doing ?</p>
+<p name="msg01">I'm learning JavaScript </p>
+
+
+<style>
+
+    body{
+        background-color: rgb(232, 189, 238);
+        color: blueviolet;
+    }
+    h1 {
+        color: rgb(118, 71, 247)
+    }
+
+</style>
+
+</head>
+<body>
+    <script>
+     
+    var a = window.document.getElementsByName("msg01") // Acessando o conteúdo do elemento HTML usando o método getElementsByName
+    a[0].style.color = "blue"
+        
+    var b = window.document.getElementById("msg") // Acessando o conteúdo do elemento HTML usando o método getElementsByID
+    b.style.color = "red"
+    
+    var c = window.document.getElementsByClassName("description") // Acessando o conteúdo do elemento HTML usando o método getElementsByClassName
+    c[0].style.color = "green"
+    
+    var d = window.document.getElementsByTagName("p") // Acessando o conteúdo do elemento HTML usando o método getElementsByTagName
+    d[0].style.color = "purple"
+    d[1].style.color = "purple"
+    d[2].style.color = "red"
+
+    var e = window.document.querySelector("p.description") // Acessando o conteúdo do elemento HTML usando o método querySelector
+    e.style.color = "blue"
+
+    a[0].style.fontSize = "20px"
+    b.style.fontSize = "20px"
+    b.style.fontStyle = "bold"
+    c[0].style.fontSize = "20px"
+    c[0].style.fontStyle = "italic"
+    
+    
+    
+
+    </script>
+    
+</body>
+</html>
