@@ -5,57 +5,35 @@ function verificarIdade(){
     var button = window.document.getElementById("btnEnviar")
     var img = window.document.getElementById("imagem")
     var msg = window.document.getElementById("msg")
+    let genero = "";
 
 
-
-    if(idade <= 10 && sexo == "Masculino"){
-        msg.innerHTML = `Sua idade é: ${idade} e você é Menino`;
-        img.src = ""
+    if(idade <= 10){
+        genero = (sexo === "Masculino") ? "você é um Menino" : " você é uma Menina";
+        img.src = (sexo === "Masculino") ? "menino.avif" : "menina.jfif";
     }
-    else if(idade <= 17 && sexo == "Masculino"){
-        msg.innerHTML = `Sua idade é: ${idade} e você é Homem Adolescente`;
-        img.src = ""
+    else if(idade <= 17){
+        genero = (sexo === "Masculino") ? "você é um Menino Adolescente" : " você é uma Menina Adolescente";
+        img.src = (sexo === "Masculino") ? "adolescente-menino.jfif" : "adolescente-menina.jfif";
     }
-    else if(idade <= 30 && sexo == "Masculino"){
-        msg.innerHTML = `Sua idade é: ${idade} e você é Homem Jovem`;
-        img.src = ""
+    else if(idade <= 30){
+        genero = (sexo === "Masculino") ? "você é um Homem Jovem" : " você é uma Mulher Jovem";
+        img.src = (sexo === "Masculino") ? "jovem-menino.avif" : "jovem-menina.jpg";
     }
-    else if(idade <= 50 && sexo == "Masculino"){
-        msg.innerHTML = `Sua idade é: ${idade} e você é Homem`;
-        img.src = ""
+    else if(idade <= 50){
+        genero = (sexo === "Masculino") ? "você é um Homem" : " você é uma Mulher";
+        img.src = (sexo === "Masculino") ? "homem-menino.jpg" : "mulher-menina.avif";
     }
-    else if(idade < 60 && sexo == "Masculino"){
-        msg.innerHTML = `Sua idade é: ${idade} e você é Homem Quase Idoso`;
-        img.src = ""
+    else if(idade < 60){
+        genero = (sexo === "Masculino") ? "você é um Homem Quase Idoso" : " você é uma Mulher Quase Idosa";
+        img.src = (sexo === "Masculino") ? "quase-menino.jpg" : "quase-menina.jpg";
     } else{
-        msg.innerHTML = `Sua idade é: ${idade} e você é Homem Idoso`;
-        img.src = ""
-    }
-    
-    if(idade <= 10 && sexo == "Feminino"){
-        msg.innerHTML = `Sua idade é: ${idade} e você é menina`;
-        img.src = ""
-    }
-    else if(idade <= 17 && sexo == "Feminino"){
-        msg.innerHTML = `Sua idade é: ${idade} e você é Mulher adolescente`;
-        img.src = ""
-    }
-    else if(idade <= 30 && sexo == "Feminino"){
-        msg.innerHTML = `Sua idade é: ${idade} e você é Mulher Jovem`;
-        img.src = ""
-    }
-    else if(idade <= 50 && sexo == "Feminino"){
-        msg.innerHTML = `Sua idade é: ${idade} e você é Mulher`;
-        img.src = ""
-    }
-    else if(idade < 60 && sexo == "Feminino"){
-        msg.innerHTML = `Sua idade é: ${idade} e você é Mulher Quase Idosa`;
-        img.src = ""
-    } else{
-        msg.innerHTML = `Sua idade é: ${idade} e você é Mulher Idosa`;
-        img.src = ""
-    }
-    
+        genero = (sexo === "Masculino") ? "você é um Homem Idoso" : " você é uma Muher Idosa";
+        img.src = (sexo === "Masculino") ? "foto-idoso.jfif" : "foto-idosa.jfif";
+    }   
+
+
+    msg.innerHTML = `Detectamos que ${genero} e tem ${idade} anos de idade`
 
     }
     
