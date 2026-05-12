@@ -12,23 +12,22 @@ var passos = Number(passo.value)
 
 visual.innerHTML = ""
 
-if(passos == 0){
+if(passos <= 0 || passos.length == 0 || inicio.length == 0 || final == 0){
     visual.innerHTML += `Verifique os numeros que você inseriu`
     passos = 1;
     visual.innerHTML += `<br>`
 }
 
 if(inicio <= final){
-do{
-
+for(c = inicio; inicio <= final; c += passos){
 visual.innerHTML += `👉  ${inicio}`
 inicio += passos
-}while(final >= inicio)
+}
 }else{
-do{
+for(c = inicio; inicio >= final; c += passos){
  visual.innerHTML += `👉  ${inicio}`
  inicio -= passos
-}while(inicio >= final)
+}
 }
 
  visual.innerHTML += `🏁`
